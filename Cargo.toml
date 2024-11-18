@@ -1,0 +1,42 @@
+[package]
+name = "watchfile"
+version = "0.1.0"
+edition = "2021"
+authors = ["Ofer Sadan <ofersadan85@gmail.com>"]
+description = "An async utility trait to subscribe to file changes of a serializable file"
+repository = "https://github.com/ofersadan85/watchfile"
+keywords = ["watch", "file", "async", "tokio", "serde"]
+categories = ["filesystem", "asynchronous"]
+license = "MIT"
+publish = true
+
+[dependencies]
+serde = { version = "1", features = ["derive"] }
+serde_json = { version = "1", optional = true }
+serde_yaml = { version = "0.9", optional = true }
+tokio = { version = "1", features = ["rt", "time", "fs", "io-util", "sync"] }
+toml = { version = "0.8", optional = true }
+tracing = { version = "0.1", features = ["async-await"] }
+
+[dev-dependencies]
+tokio = { version = "1.41.1", features = ["test-util", "full"] }
+
+[features]
+default = ["yaml", "toml", "json"]
+json = ["dep:serde_json"]
+toml = ["dep:toml"]
+yaml = ["dep:serde_yaml"]
+
+[lints.rust]
+unsafe_code = "forbid"
+
+[lints.clippy]
+cargo = { level = "warn", priority = -1 }
+nursery = { level = "warn", priority = -1 }
+pedantic = { level = "warn", priority = -1 }
+unwrap_used = "deny"
+must_use_candidate = "allow"
+missing_errors_doc = "allow"
+missing_panics_doc = "allow"
+module_name_repetitions = "allow"
+unreadable_literal = "allow"
