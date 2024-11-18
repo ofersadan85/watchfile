@@ -1,6 +1,6 @@
 [package]
 name = "watchfile"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 authors = ["Ofer Sadan <ofersadan85@gmail.com>"]
 description = "An async utility trait to subscribe to file changes of a serializable file"
@@ -11,7 +11,7 @@ license = "MIT"
 publish = true
 
 [dependencies]
-serde = { version = "1", features = ["derive"] }
+serde = { version = "1" }
 serde_json = { version = "1", optional = true }
 serde_yaml = { version = "0.9", optional = true }
 tokio = { version = "1", features = ["rt", "time", "fs", "io-util", "sync"] }
@@ -20,6 +20,7 @@ tracing = { version = "0.1", features = ["async-await"] }
 
 [dev-dependencies]
 tokio = { version = "1.41.1", features = ["test-util", "full"] }
+serde = { version = "1.0.215", features = ["derive"] }
 
 [features]
 default = ["yaml", "toml", "json"]

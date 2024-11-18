@@ -12,7 +12,7 @@ Currently supported:
 - TOML (`features = ["toml"]` using `toml`)
 - YAML (`features = ["yaml"]` using `serde_yaml`)
 
-All of the are optional features, all enabled by default. To minimize dependencies, you can disable them by using `default-features = false` in your `Cargo.toml`, and then enabling only the ones you need (for example, only JSON):
+All of them are optional features, all enabled by default. To minimize dependencies, you can disable them by using `default-features = false` in your `Cargo.toml`, and then enabling only the ones you need (for example, only JSON):
 
 ```toml
 [dependencies]
