@@ -19,7 +19,7 @@ toml = { version = "0.8", optional = true }
 tracing = { version = "0.1", features = ["async-await"] }
 
 [dev-dependencies]
-tokio = { version = "1.41.1", features = ["test-util", "full"] }
+tokio = { version = "1.43.1", features = ["test-util", "full"] }
 serde = { version = "1.0.215", features = ["derive"] }
 
 [features]
